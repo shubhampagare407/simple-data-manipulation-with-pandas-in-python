@@ -1,2 +1,36 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#Basic Data Manipulation with Pandas
+
+import pandas as pd
+
+# Load CSV data
+df = pd.read_csv('data.csv')
+
+# View the first few rows
+print(df.head())
+
+# Handling missing values
+df.fillna(method='ffill', inplace=True)
+
+# Removing duplicates
+df.drop_duplicates(inplace=True)
+
+# Filtering data
+filtered_df = df[df['column_name'] > threshold_value]
+
+# Sorting data
+sorted_df = df.sort_values(by='column_name')
+
+# Grouping data
+grouped_df = df.groupby('another_column').mean()
+
+# Display the results
+print(filtered_df)
+print(sorted_df)
+print(grouped_df)
+
+#Explanation:
+#ndling Missing Values: fillna() fills missing values (forward fill method).
+#Removing Duplicates: drop_duplicates() removes duplicate rows.
+#Filtering Data: Use boolean indexing to filter rows.
+#Sorting Data: sort_values() sorts the DataFrame by a specified column.
+#Grouping Data: groupby() groups the data by a column and applies a function (e.g., mean()).
